@@ -1,0 +1,26 @@
+.list {
+  --padding: 12px;
+  --item-gap: 4px;
+  --contents-gap: 20px;
+
+  list-style-type: none;
+  margin-block: 0;
+  padding-inline-start: 0;
+
+  display: flex;
+  flex-flow: column;
+  gap: var(--item-gap);
+
+  li {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: var(--contents-gap);
+    padding: var(--padding);
+    background: var(--gray-950);
+
+    [data-role="label"] {
+      flex: 1;
+    }
+  }
+}
