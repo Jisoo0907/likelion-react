@@ -1,4 +1,3 @@
-// const liveServer = require("live-server");
 import liveServer from "live-server";
 
 const params = {
