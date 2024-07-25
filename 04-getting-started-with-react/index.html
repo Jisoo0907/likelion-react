@@ -18,16 +18,21 @@
       href="src/styles/main.css"
     />
     <script
-      src="src/main.js"
       type="module"
+      src="src/main.js"
     ></script>
   </head>
 
   <body>
 
-    <!-- 개발자가 작성한 HTML 코드 -->
+    <div id="actual-dom"></div>
 
+    <div id="virtual-dom"></div>
+
+    <!-- 개발자가 작성한 HTML 코드 -> 브라우저 해석 -> 실제 문서 객체 모델(DOM) 생성 -->
+    <!-- HTML Markup -->
     <ul
+      hidden
       class="architectures"
       lang="en"
     >
