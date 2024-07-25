@@ -3,6 +3,7 @@ class VirtualDomRoot {
 
   constructor(rootElement) {
     this.#rootElement = rootElement;
+    // #rootElement: private 필드
   }
 
   #parseVNode(vNode) {
@@ -34,11 +35,13 @@ class VirtualDomRoot {
   }
 
   render(vNode) {
+    // 가상 노드를 받아 파싱 후, 실제 DOM에 추가
     const parsedElements = this.#parseVNode(vNode); // 가상 -> 실제 DOM 생성
     this.#rootElement.append(parsedElements);
   }
 
   umount() {
+    // 루트 요소의 모든 자식 요소 제거
     Array.from(this.#rootElement.children).forEach((child) => child.remove());
   }
 }

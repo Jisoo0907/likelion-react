@@ -3,9 +3,9 @@
 // 실제 DOM을 추상화(단순화)
 
 // virtual
-import { createElement } from "./lib/virtual/index.js";
+import createElement from "./lib/virtual/createElement.js";
+
 // virtual-dom
-import { createRoot } from "./lib/virtual-dom/index.js";
 
 // -----------------------------------------------------------------
 
@@ -13,21 +13,27 @@ import { createRoot } from "./lib/virtual-dom/index.js";
 
 // 자식(하위) 요소
 const figcaptionVElement = createElement("figcaption");
-// console.log(figcaptionVElement);
+/* 
+{
+  $$typeof: Symbol("virtual.element"), // 가상 요소를 식별하는 타입
+  type: "figcaption",                  // 요소의 타입, 여기서는 "figcaption"
+  key: null,                           // 요소를 식별하는 데 사용되는 키 (없음)
+  props: {                             // 요소의 속성
+    children: []                       // 자식 요소가 없으므로 빈 배열
+  }
+}
+*/
+console.log(figcaptionVElement);
 
 // 부모(상위) 요소
 // API : createElement(type, props, child1, child2, ..., childN)
 // API : createElement(type, props, ...children)
-const figureVElement = createElement("figure", null, figcaptionVElement);
 // console.log(figureVElement);
 
 // virtual-dom / createRoot
 // 가상 요소를 실제 DOM 요소로 렌더링
 
 // API : createRoot(container)
-const virtualRootElement = document.getElementById("virtual-dom");
-const vRoot = createRoot(virtualRootElement);
-vRoot.render(figureVElement);
 
 // -----------------------------------------------------------------
 
@@ -36,16 +42,9 @@ vRoot.render(figureVElement);
 // <figure> 요소를 생성하고 싶어요.
 
 // 부모(상위) 요소 생성
-const figureElement = document.createElement("figure");
 
 // 자식(하위) 요소 생성
-const figcaptionElement = document.createElement("figcaption");
 
 // 요소간 관계 형성
-figureElement.append(figcaptionElement);
 
 // 실제 DOM에 마운트(mount, 착장 === 렌더링)
-const actualDomElement = document.getElementById("actual-dom");
-console.log(actualDomElement);
-
-actualDomElement.append(figureElement);
