@@ -27,6 +27,10 @@ button {
   }
 }
 
+[hidden] {
+  display: none !important;
+}
+
 abbr[title] {
   cursor: help;
   text-decoration: none;
@@ -52,7 +56,7 @@ abbr[title] {
 
   position: relative;
   width: clamp(var(--min-size), 90vw, var(--max-size));
-  height: clamp(var(--min-size), 70vh, var(--max-size));
+  height: clamp(var(--min-size), 50vw, var(--max-size));
   margin: 60px auto;
   border: 4px solid currentColor;
   border-radius: 8px;
