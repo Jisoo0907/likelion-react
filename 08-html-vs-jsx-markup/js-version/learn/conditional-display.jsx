@@ -1,4 +1,6 @@
 /* eslint-disable no-unused-vars */
+// ESLint에게 no-unused-vars 규칙 비활성화하라고 지시
+// 해당 규칙은 선언된 후 사용되지 않는 변수를 경고함
 import { bool } from 'prop-types';
 
 function ConditionalDisplay({ isShowImage = true }) {
