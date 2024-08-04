@@ -13,12 +13,26 @@ import Learn from './learn';
 
 const container = document.getElementById('react-app');
 
-if (container) {
-  createRoot(container).render(
+if (!container) {
+  throw new Error('문서에 "#react-app" 요소가 존재하지 않습니다.');
+}
+
+const reactDOMRoot = createRoot(container);
+
+function render() {
+  reactDOMRoot.render(
     <StrictMode>
       <Learn />
     </StrictMode>
   );
-} else {
-  console.warn('문서에 "#react-app" 요소가 존재하지 않습니다.');
 }
+
+// Reactivity (Proxy)
+export function update() {
+  // update state
+  // re-render
+  render();
+}
+
+// first render
+render();

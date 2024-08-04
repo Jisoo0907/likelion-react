@@ -69,8 +69,8 @@ function sumPure(x, y, z) {
   return x + y + z;
 }
 
-console.log(sumPure(1, 2, 3));
-console.log(sumPure(1, 2, 3));
+// console.log(sumPure(1, 2, 3));
+// console.log(sumPure(1, 2, 3));
 
 // ----------------------------------------
 
@@ -80,5 +80,5 @@ function sumInpure(x, y, z) {
   return x + y + z + ++a;
 }
 
-console.log(sumInpure(1, 2, 3));
-console.log(sumInpure(1, 2, 3));
+// console.log(sumInpure(1, 2, 3));
+// console.log(sumInpure(1, 2, 3));
