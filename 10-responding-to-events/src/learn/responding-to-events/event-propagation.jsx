@@ -1,10 +1,12 @@
 // --------------------------------------------------------------------------
 // ✅ 이벤트 전파
 // --------------------------------------------------------------------------
-// - [ ] 전파 중지
-// - [ ] 전파 대안으로 핸들러 전달
-// - [ ] 기본 작동 방지
+// - [x] 전파 중지 (개별적으로 할 수 있음)
+// - [x] 전파 대안으로 핸들러 전달
+// - [x] 기본 작동 방지
 // --------------------------------------------------------------------------
+
+import LayoutBox from './LayoutBox';
 
 // RGB 모드
 // CMYK 모드
@@ -16,37 +18,38 @@
 // event.stopPropagation(); // 이벤트 전파 중지
 
 function EventPropagation() {
+  // const returnHandlePrint = (color) => (e) => {
+  //   console.log(color, e.target);
+  // };
+
+  function returnHandlePrint(color) {
+    return function handlePrint(e) {
+      console.log(color, e.target);
+    };
+  }
+
   return (
     <details>
       <summary>
         <b>이벤트 전파 &amp; 기본 작동 방지</b>
       </summary>
       {/* 상위 컴포넌트 : 정민 */}
-      <div
-        onClick={(e) => {
-          console.log('cyan', e.target);
-        }}
-        className="box"
-        style={styles.cyan}
-      >
-        {/* 하위 컴포넌트 : 동호 */}
-        <div
-          onClick={(e) => {
-            console.log('magenta', e.target);
-          }}
-          className="box"
+      <LayoutBox style={styles.cyan} onClick={returnHandlePrint('cyan')}>
+        <LayoutBox
           style={styles.magenta}
+          onClick={returnHandlePrint('magenta')}
         >
-          {/* 자손 컴포넌트 : 재명 */}
-          <div
-            onClick={(e) => {
-              console.log('yellow', e.target);
-            }}
-            className="box"
+          <LayoutBox
             style={styles.yellow}
-          ></div>
-        </div>
-      </div>
+            onClick={returnHandlePrint('yellow')}
+          >
+            <LayoutBox
+              style={styles.purple}
+              onClick={returnHandlePrint('purple')}
+            />
+          </LayoutBox>
+        </LayoutBox>
+      </LayoutBox>
     </details>
   );
 }
@@ -60,6 +63,9 @@ const styles = {
   },
   yellow: {
     '--color': 'var(--yellow)',
+  },
+  purple: {
+    '--color': 'var(--purple, #7423f6)',
   },
 };
 
