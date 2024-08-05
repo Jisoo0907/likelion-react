@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------
-// ✅ 명령형 프로그래밍
+// ✅ 명
 // --------------------------------------------------------------------------
 // - [x] 체크박스 인풋이 체크 상태이면, 버튼은 활성 상태입니다.
 // - [x] 체크박스 인풋이 체크 상태가 아니면, 버튼은 비활성 상태입니다.
@@ -19,8 +19,8 @@ globalThis.checkbox = checkbox;
 checkbox.addEventListener("change", handleChange);
 
 // 이벤트 핸들러(기능) 작성(구현)
-function handleChange(e) {
-  const { checked } = e.target;
+function handleChange(e: Event) {
+  const { checked } = e.target as HTMLInputElement;
   if (checked) {
     // button.setAttribute('disabled', 'false');
     button.removeAttribute("disabled");
