@@ -17,7 +17,7 @@ import NoteEditPage from './pages/NoteEditPage';
 
 function NoteApp() {
   const [routeInfo] = useState({
-    route: ROUTES.list,
+    route: ROUTES.list, // route:'list'이것도 가능은 한데 오타 발생 시...
     noteId: null,
   });
 
