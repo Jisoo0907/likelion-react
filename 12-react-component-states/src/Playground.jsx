@@ -1,11 +1,17 @@
-import TermAndConditions from '@/components/TermAndCondition.class';
+import UsersPage from '@/pages/users/UsersPage';
 
 function Playground() {
   return (
-    <>
-      <TermAndConditions />
-    </>
+    <div style={styles}>
+      <UsersPage />
+    </div>
   );
 }
+
+const styles = {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: 20,
+};
 
 export default Playground;
