@@ -1,3 +1,8 @@
+import { PLAYER } from './constants';
+
+console.log(PLAYER.ONE);
+console.log(PLAYER.TWO);
+
 function Game() {
   return (
     <div className="Game">
