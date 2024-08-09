@@ -13,7 +13,7 @@ NoteForm.propTypes = {
 };
 
 function NoteForm({ mode = 'create', note }) {
-  const titleId = useId();
+  const titleId = useId(); // 훅 사용하심
   const contentId = useId();
   const userId = useId();
 
