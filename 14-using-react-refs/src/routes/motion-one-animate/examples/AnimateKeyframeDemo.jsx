@@ -7,6 +7,7 @@
 // --------------------------------------------------------------------------
 
 import { useRef } from 'react';
+import { animate } from 'motion';
 import SoccorBall from '../components/SoccorBall';
 import S from './AnimateDemo.module.css';
 
@@ -30,8 +31,26 @@ function AnimateKeyframeDemo() {
     //
     // --------------------------------------------------------------------------
     //
+    // console.log(2, soccorBallRef); // { current: SVGElement }
+    const { current: element } = soccorBallRef;
 
-    console.log(2, soccorBallRef); // { current: SVGElement }
+    animate(
+      element,
+      { x: [0, 400, 0], rotate: [0, 360, -360] },
+      {
+        duration: 1,
+        easing: 'ease-out',
+        repeat: 2,
+        endDelay: 0.5,
+        // x: {
+        //   easing: spring({
+        //     velocity: 8000,
+        //     stiffness: 100,
+        //     damping: 10,
+        //   }),
+        // },
+      }
+    );
   };
 
   return (
