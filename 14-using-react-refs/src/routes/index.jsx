@@ -9,7 +9,7 @@ import Home from './home';
 
 const routes = [
   {
-    title: '리액트로 만드는 싱글 페이지 애플리케이션',
+    title: '싱글 페이지 애플리케이션',
     path: '/',
     element: <Home />,
   },
