@@ -9,7 +9,7 @@
 // --------------------------------------------------------------------------
 
 import { useRef } from 'react';
-import { animate } from 'motion';
+import { timeline } from 'motion';
 import { number } from 'prop-types';
 import S from './SVGPathTimeline.module.css';
 
@@ -25,17 +25,20 @@ function SVGPathTimeline({ size = 60 }) {
     const circleElement = svgCircleRef.current;
     const pathElement = svgPathRef.current;
 
-    animate(
-      circleElement,
-      { strokeDashoffset: [1, 0], visibility: 'visible' },
-      { duration: 0.8, easing: 'ease-in-out' }
-    );
+    const sequence = [
+      [
+        circleElement,
+        { strokeDashoffset: [1, 0], visibility: 'visible' },
+        { duration: 1, easing: 'ease-out' },
+      ],
+      [
+        pathElement,
+        { strokeDashoffset: [1, 0], visibility: 'visible' },
+        { duration: 0.6, easing: 'ease-in-out', at: '-0.2' },
+      ],
+    ];
 
-    animate(
-      pathElement,
-      { strokeDashoffset: [1, 0], visibility: 'visible' },
-      { duration: 0.6, easing: 'ease-in-out', delay: 0.6 }
-    );
+    timeline(sequence);
   };
 
   return (
