@@ -26,7 +26,6 @@ function MotionOneTimeline() {
       <SVGPathTimeline />
 
       <h2 className={S.headline2}>직접 그려 구현하는 SVG 애니메이션</h2>
-
       <div className={S.description}>
         <p>Figma에서 SVG 패스 애니메이션을 적용할 아이콘을 직접 그려보세요.</p>
         <p>직접 그린 아이콘에 타임라인 애니메이션을 적용해보세요.</p>

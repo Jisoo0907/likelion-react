@@ -29,12 +29,12 @@ function SVGPathTimeline({ size = 60 }) {
       [
         circleElement,
         { strokeDashoffset: [1, 0], visibility: 'visible' },
-        { duration: 1, easing: 'ease-out' },
+        { duration: 0.4, easing: 'ease-out' },
       ],
       [
         pathElement,
         { strokeDashoffset: [1, 0], visibility: 'visible' },
-        { duration: 0.6, easing: 'ease-in-out', at: '-0.2' },
+        { duration: 0.2, easing: 'ease-in-out', at: '+0.1' },
       ],
     ];
 
