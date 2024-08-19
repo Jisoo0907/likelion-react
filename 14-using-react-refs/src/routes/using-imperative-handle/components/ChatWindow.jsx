@@ -29,6 +29,7 @@ function ChatWindow({ messages, onAddMessage }) {
 
   const handleSendMessage = (e) => {
     e.preventDefault();
+
     const formData = new FormData(e.currentTarget);
     let newMessage = formData.get('message');
     newMessage = newMessage.trim();
@@ -111,7 +112,7 @@ function ChatWindow({ messages, onAddMessage }) {
           <textarea
             ref={textareaRef}
             id={id}
-            name="message"
+            name="message" // textarea에 입력된 값이 폼이 제출될 때 message라는 이름으로 서버에 전송됨
             onKeyDown={handleKeyDown}
           />
         </div>
