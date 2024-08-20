@@ -1,37 +1,12 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import HomePage from '@/pages/Home';
-import NoteListPage from '@/pages/NoteList';
-import NewNotePage from '@/pages/NewNote';
-import NoteDetailPage from '@/pages/NoteDetail';
-
-const routes = [
-  // Route object
-  // { path?: string, element?: React.ReactNode | null }
-  {
-    path: '/',
-    element: <HomePage />,
-  },
-  {
-    path: '/notes',
-    element: <NoteListPage />,
-  },
-  {
-    path: '/notes/new',
-    element: <NewNotePage />,
-  },
-  {
-    path: '/notes/detail',
-    element: <NoteDetailPage />,
-  },
-];
-
-const router = createBrowserRouter(routes);
+import { StrictMode } from 'react';
+import { RouterProvider } from 'react-router-dom';
+import router from '@/routes/router';
 
 function App() {
   return (
-    <>
+    <StrictMode>
       <RouterProvider router={router} />
-    </>
+    </StrictMode>
   );
 }
 
