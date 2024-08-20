@@ -30,20 +30,24 @@ import CounterApp from './counter-app-use-counter';
 // eslint-disable-next-line no-unused-vars
 const __routes__ = [
   {
-    path: '/',
-    element: <RootLayout />,
+    path: '/', // 최상위 경로. 애플리케이션의 루트 URL.
+    element: <RootLayout />, // 이 경로에서 렌더링 될 컴포넌트 지정.
     children: [
+      // ture로 설정된 경로는 '/' 경로로 들어갔을 때 기본적으로 렌더링되는 컴포넌트를 지정함.
       { index: true, element: <SyncDocumentTitle /> },
       { path: 'sync-web-storage', element: <SyncWebStorage /> },
       {
         path: 'effect-sync-and-cleanup',
-        element: <EffectSyncAndCleanup />,
+        element: <EffectSyncAndCleanup />, // 이 경로에서 렌더링할 상위 컴포넌트 지정
         children: [
+          // effect-sync-and-cleanup 경로 내에서 다시 중첩된 하위 경로들이 설정돼 있음
           {
+            // /effect-sync-and-cleanup 경로 진입 시 기본적으로 렌더링 될 컴포넌트 지정
             index: true,
             element: <PrintMousePosition />,
           },
           {
+            // /effect-sync-and-cleanup/clock 경로
             path: 'clock',
             element: <ClockOnOffWrapper />,
           },
