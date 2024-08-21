@@ -7,7 +7,7 @@ import React, { useCallback } from 'react';
 
 // TimeToggler 함수 참조
 // 기억된 컴포넌트 = React.memo(컴포넌트 참조)
-const MemoizedTimeToggler = React.memo(TimeToggler);
+// const MemoizedTimeToggler = React.memo(TimeToggler);
 
 function TimeAndCounter() {
   // 컴포넌트가 다시 렌더링(실행) 되는 이유
@@ -30,7 +30,7 @@ function TimeAndCounter() {
           // 함수 참조: 함수를 기억하고 있는 것
           // 1. handleToggleTime => 얘는 우리가 기억(메모리)함 2. TimeToggler(컴포넌트니까) => 근데 얘는 우리가 기억 안 함.
           // 그래서 리액트가 렌더링 전과 후가 다르다고 봄 => 리렌더링
-          MemoizedTimeToggler,
+          TimeToggler,
           { onToggle: handleToggleTime },
           label
         )}

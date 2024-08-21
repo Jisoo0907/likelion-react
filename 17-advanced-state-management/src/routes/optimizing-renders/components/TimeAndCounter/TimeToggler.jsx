@@ -1,6 +1,7 @@
 import { func, node } from 'prop-types';
 import S from './style.module.css';
 import useRenderCountLog from '@/hooks/useRenderCountLog';
+import { memo } from 'react';
 
 TimeToggler.propTypes = {
   children: node.isRequired,
@@ -16,4 +17,4 @@ function TimeToggler({ children, onToggle }) {
   );
 }
 
-export default TimeToggler;
+export default memo(TimeToggler);
