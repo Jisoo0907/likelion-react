@@ -6,6 +6,7 @@ AppLink.propTypes = {
   isExternal: bool,
 };
 
+// 상태 없이 전달된 props로 어떻게 렌더링 할 것인지?
 function AppLink({ children, isExternal = false, ...restProps }) {
   const externalProps = {};
 

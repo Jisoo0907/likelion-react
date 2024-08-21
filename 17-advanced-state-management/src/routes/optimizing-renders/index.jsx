@@ -1,3 +1,4 @@
+import { AppLink } from '@/components';
 import useDocumentTitle from '@/hooks/useDocumentTitle';
 import TimeAndCounter from './components/TimeAndCounter';
 import TodoListApp from './components/TodoListApp';
@@ -16,29 +17,23 @@ function OptimizingRenders() {
         </p>
         <p>
           참고:{' '}
-          <a
+          <AppLink
             href="https://ko.react.dev/reference/react/useCallback"
-            rel="noreferrer"
-            target="_blank"
+            isExternal
           >
             useCallback()
-          </a>
+          </AppLink>
           ,
-          <a
+          <AppLink
             href="https://ko.react.dev/reference/react/useMemo"
-            rel="noreferrer"
-            target="_blank"
+            isExternal
           >
             useMemo()
-          </a>
+          </AppLink>
           ,
-          <a
-            href="https://ko.react.dev/reference/react/memo"
-            rel="noreferrer"
-            target="_blank"
-          >
+          <AppLink href="https://ko.react.dev/reference/react/memo" isExternal>
             memo()
-          </a>
+          </AppLink>
         </p>
       </div>
 
