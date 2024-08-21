@@ -7,12 +7,12 @@ function AppHeader() {
 
   return (
     <header className={S.component}>
-      <Link to="/" className={S.homeLink}>
+      <Link to="/" className={S.homeLink} aria-label="홈">
         <IoLogoReact />
       </Link>
       {authUser && (
         <div className={S.userInfo}>
-          <img src="https://placehold.co/20x20?text=photo" alt="홈" />
+          <img src="https://placehold.co/20x20?text=photo" alt="" />
           사용자 이름
         </div>
       )}
