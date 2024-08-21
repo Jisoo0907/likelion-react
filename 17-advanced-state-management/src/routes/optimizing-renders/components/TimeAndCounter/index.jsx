@@ -3,6 +3,7 @@ import S from './style.module.css';
 import Counter from '../Counter';
 import TimeToggler from './TimeToggler';
 import useRenderCountLog from '@/hooks/useRenderCountLog';
+import { useCallback } from 'react';
 
 function TimeAndCounter() {
   // 컴포넌트가 다시 렌더링(실행) 되는 이유
@@ -11,7 +12,7 @@ function TimeAndCounter() {
   const { time, turnOn, onOff } = useClock();
   useRenderCountLog('TimeAndCounter', '#062570', 800, 20);
 
-  const handleToggleTime = () => onOff((c) => !c);
+  const handleToggleTime = useCallback(() => onOff((c) => !c), [onOff]);
 
   const label = `타임 ${turnOn ? '스톱' : '플레이'}`;
 
