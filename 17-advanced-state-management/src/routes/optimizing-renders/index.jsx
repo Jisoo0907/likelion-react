@@ -3,6 +3,7 @@ import useDocumentTitle from '@/hooks/useDocumentTitle';
 import TimeAndCounter from './components/TimeAndCounter';
 import TodoListApp from './components/TodoListApp';
 import S from './style.module.css';
+import AppDivider from '@/components/AppDivider';
 
 function OptimizingRenders() {
   useDocumentTitle('렌더링(성능) 최적화');
@@ -37,7 +38,7 @@ function OptimizingRenders() {
         </p>
       </div>
 
-      <div className="divider" />
+      <AppDivider />
 
       <h2 className="headline2">Time &amp; Counter</h2>
       <div className="description">
@@ -49,7 +50,7 @@ function OptimizingRenders() {
 
       <TimeAndCounter />
 
-      <div className="divider" />
+      <AppDivider />
 
       <h2 className="headline2">Todo List</h2>
       <div className="description">
