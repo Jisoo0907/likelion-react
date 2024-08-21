@@ -3,6 +3,7 @@ import GrandParent from './components/GrandParent';
 import S from './style.module.css';
 import { useMemo, useState } from 'react';
 import { throttle } from '@/utils';
+import { AppLink } from '@/components';
 
 function PropsDrillingSolution() {
   useDocumentTitle('프롭스 드릴링 이슈 해결책');
@@ -23,13 +24,12 @@ function PropsDrillingSolution() {
         </p>
         <p style={{ marginBlockEnd: 16 }}>
           리액트{' '}
-          <a
+          <AppLink
             href="https://ko.react.dev/learn/passing-data-deeply-with-context"
-            rel="noreferrer noopener"
-            target="_blank"
+            isExternal
           >
             Context API
-          </a>
+          </AppLink>
           를 사용해 이 문제를 해결해봅니다.
         </p>
         <div>
