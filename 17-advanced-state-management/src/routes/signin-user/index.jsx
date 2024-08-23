@@ -30,7 +30,7 @@ function SignInUser() {
       setAuth({ user, token });
       navigate('/');
     } catch (error) {
-      console.error(error);
+      console.error(error.message, error.data);
     }
   };
 
